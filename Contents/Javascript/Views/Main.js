@@ -1,6 +1,6 @@
 // Create a class and extended it from the MAF.system.SidebarView
-var MyView = new MAF.Class({
-	ClassName: 'MyView',
+var Main = new MAF.Class({
+	ClassName: 'Main',
 
 	Extends: MAF.system.FullscreenView,
 
@@ -18,6 +18,18 @@ var MyView = new MAF.Class({
 				anchorStyle: 'center'
 			}
 		} ).appendTo( this );
+
+		var wall = this.elements.wall = new MAF.element.Text({
+
+			styles: {
+				width: view.width,
+				height: view.height
+			}
+
+		}).appendTo(view);
+
+		//create Header
+		createHeader(view, wall);
 	},
 
 	// After create view and when returning to the view

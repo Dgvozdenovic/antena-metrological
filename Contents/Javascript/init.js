@@ -1,12 +1,18 @@
+//Theme
+include("Javascript/Theme/Main.theme.js");
+
 // Include your views
-include('Javascript/Views/MyView.js');
+include('Javascript/Views/Main.js');
+
+//Components
+include('Javascript/Components/Header.js');
 
 // Init application with view config
 MAF.application.init({
 	views: [
-		{ id: 'view-MyView', viewClass: MyView },
-		{ id: 'view-About', viewClass: MAF.views.AboutBox } // Use standard About view
+		{ id: 'view-Main', viewClass: Main },
+		{ id: 'view-About', viewClass: MAF.views.AboutBox }
 	],
-	defaultViewId: 'view-MyView', // Declare what view to be loaded when opening the app
+	defaultViewId: 'view-Main', // Declare what view to be loaded when opening the app
 	settingsViewId: 'view-About' // Declare what view is opened when a used loads the settings
 });
