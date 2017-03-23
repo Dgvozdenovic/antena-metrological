@@ -1,0 +1,19 @@
+{
+	"identifier": "antena-metrological",
+	"name": "antena-metrological",
+	"version": "0.0.1",
+	"author": "Metrological Widgets",
+	"company": "Metrological Widgets",
+	"copyright": "Metrological Widgets 2014",
+	"description": "A clean App structure",
+	"categories": [
+		"video"
+	],
+	"scripts": "Javascript/init.js",
+	"images": {
+		"about": "Images/Icon.png",
+		"icon": {
+			"192x192": "Images/antenna.jpg"
+		}
+	}
+}
