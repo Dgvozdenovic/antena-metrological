@@ -15,7 +15,6 @@ var MyView = new MAF.Class({
 				height: this.height,
 				fontSize: 60,
 				backgroundColor: SPECIALCOLOR
-
 			}
 		}).appendTo(this);
 		/** MAIN CONTAINER **/
@@ -61,8 +60,6 @@ var MyView = new MAF.Class({
 				left: 20,
 				paddingLeft: 90,
 				paddingTop: 29
-			},
-			events: {
 			}
 		}).appendTo(this.elements.footerButton);
 
@@ -78,8 +75,6 @@ var MyView = new MAF.Class({
 				paddingLeft: 50,
 				paddingTop: 29
 			},
-			events: {
-			}
 		}).appendTo(this.elements.footerButton);
 
 		this.elements.favoriteButton = new MAF.control.TextButton({
@@ -93,8 +88,6 @@ var MyView = new MAF.Class({
 				left: this.elements.emisiuniButton.width + this.elements.liveButton.width + 60,
 				paddingLeft: 45,
 				paddingTop: 29
-			},
-			events: {
 			}
 		}).appendTo(this.elements.footerButton);
 
@@ -110,8 +103,6 @@ var MyView = new MAF.Class({
 				left: this.elements.emisiuniButton.width + this.elements.liveButton.width + this.elements.favoriteButton.width + 80,
 				paddingLeft: 80,
 				paddingTop: 29
-			},
-			events: {
 			}
 		}).appendTo(this.elements.footerButton);
 
@@ -133,5 +124,5 @@ var MyView = new MAF.Class({
 	updateView: function () {
 		var view = this;
 	}
-	
+
 });
