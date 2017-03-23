@@ -15,5 +15,4 @@ MAF.application.init({
 		{ id: 'view-MyView', viewClass: MyView }
 	],
 	defaultViewId: 'view-MyView'
-
 });
