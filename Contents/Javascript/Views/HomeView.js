@@ -1,6 +1,6 @@
 
-var MyView = new MAF.Class({
-	ClassName: 'MyView',
+var HomeView = new MAF.Class({
+	ClassName: 'HomeView',
 
 	Extends: MAF.system.FullscreenView,
 
@@ -9,10 +9,10 @@ var MyView = new MAF.Class({
 		var view = this;
 
 		/** MAIN CONTAINER **/
-		this.elements.antennaContainer = new MAF.element.Container({
+		var antennaContainer = new MAF.element.Container({
 			styles: {
-				width: this.width,
-				height: this.height,
+				width: view.width,
+				height: view.height,
 				fontSize: 60,
 				backgroundColor: SPECIALCOLOR
 			}
@@ -20,36 +20,36 @@ var MyView = new MAF.Class({
 		/** MAIN CONTAINER **/
 
 		/** BACKGROUND IMAGE **/
-		this.elements.antennaInitImage = new MAF.element.Image({
+		var antennaInitImage = new MAF.element.Image({
 			src: 'Images/Homepage-background-Image.jpg',
 			styles: {
 				top: 0,
-				width: this.width,
-				height: this.elements.antennaContainer.height - 300,
+				width: view.width,
+				height: antennaContainer.height - 300,
 				fontSize: 60,
 				anchorStyle: 'center'
 			}
-		}).appendTo(this.elements.antennaContainer);
+		}).appendTo(antennaContainer);
 		/** BACKGROUND IMAGE **/
 
 
 		/** FOOTER BUTTON **/
-		this.elements.footerButton = new MAF.element.Container({
+		view.elements.footerButton = new MAF.element.Container({
 			styles: {
-				top: this.elements.antennaInitImage.height + 10,
+				top: antennaInitImage.height + 10,
 				width: 1180,
 				height: 180,
-				marginLeft: (this.width - 1180) / 2,
-				marginRight: (this.width - 1180) / 2,
+				marginLeft: (view.width - 1180) / 2,
+				marginRight: (view.width - 1180) / 2,
 				fontSize: 15
 			}
-		}).appendTo(this.elements.antennaContainer);
+		}).appendTo(antennaContainer);
 
 		/** FOOTER BUTTON **/
 
 		/** BUTTONS **/
 
-		this.elements.liveButton = new MAF.control.TextButton({
+		view.elements.liveButton = new MAF.control.TextButton({
 			label: $_('LIVE'),
 			ClassName: 'Button',
 			theme: false,
@@ -63,7 +63,7 @@ var MyView = new MAF.Class({
 			}
 		}).appendTo(this.elements.footerButton);
 
-		this.elements.emisiuniButton = new MAF.control.TextButton({
+		view.elements.emisiuniButton = new MAF.control.TextButton({
 			label: $_('EMISIUNI'),
 			ClassName: 'Button',
 			theme: false,
@@ -77,7 +77,7 @@ var MyView = new MAF.Class({
 			},
 		}).appendTo(this.elements.footerButton);
 
-		this.elements.favoriteButton = new MAF.control.TextButton({
+		view.elements.favoriteButton = new MAF.control.TextButton({
 			label: $_('FAVORITE'),
 			ClassName: 'Button',
 			theme: false,
@@ -85,14 +85,14 @@ var MyView = new MAF.Class({
 				width: 270,
 				height: 110,
 				top: 35,
-				left: this.elements.emisiuniButton.width + this.elements.liveButton.width + 60,
+				left: view.elements.emisiuniButton.width + view.elements.liveButton.width + 60,
 				paddingLeft: 45,
 				paddingTop: 29
 			}
-		}).appendTo(this.elements.footerButton);
+		}).appendTo(view.elements.footerButton);
 
 
-		this.elements.contButton = new MAF.control.TextButton({
+		view.elements.contButton = new MAF.control.TextButton({
 			label: $_('CONT'),
 			ClassName: 'Button',
 			theme: false,
@@ -100,25 +100,25 @@ var MyView = new MAF.Class({
 				width: 270,
 				height: 110,
 				top: 35,
-				left: this.elements.emisiuniButton.width + this.elements.liveButton.width + this.elements.favoriteButton.width + 80,
+				left: view.elements.emisiuniButton.width + view.elements.liveButton.width + view.elements.favoriteButton.width + 80,
 				paddingLeft: 80,
 				paddingTop: 29
 			}
-		}).appendTo(this.elements.footerButton);
+		}).appendTo(view.elements.footerButton);
 
 		/** BUTTONS **/
-		this.elements.logo = new MAF.element.Text({
+		new MAF.element.Text({
 			styles: {
-				top: this.elements.antennaInitImage.height + this.elements.footerButton.height + 15,
+				top: antennaInitImage.height + view.elements.footerButton.height + 15,
 				left: 800,
-				width: this.width,
-				height: this.height,
+				width: view.width,
+				height: view.height,
 				fontSize: 60,
 				anchorStyle: 'center',
 				backgroundImage: 'Images/Antena-Logo.jpg',
 				backgroundRepeat: 'no-repeat'
 			}
-		}).appendTo(this.elements.antennaContainer);
+		}).appendTo(antennaContainer);
 	},
 
 	updateView: function () {
