@@ -1,7 +1,6 @@
 function createHeader(view, title) {
 
     var headerWrapper = view.elements.headerWrapper = new MAF.element.Text({
-
         styles: {
             width: view.width,
             height: 120,
@@ -10,7 +9,7 @@ function createHeader(view, title) {
 
     }).appendTo(view);
 
-    var backButton = view.elements.backButton = new MAF.control.BackButton({
+    new MAF.control.BackButton({
         ClassName: 'SpecialButton',
         label: FontAwesome.get('fa', ['fa-arrow-circle-left']) + '   ' + $_('Back'),
         styles: {
@@ -24,19 +23,7 @@ function createHeader(view, title) {
         }
     }).appendTo(headerWrapper);
 
-    var logo = view.elements.logo = new MAF.element.Image(
-        {
-            src: 'Images/Antena-Logo.jpg',
-            styles: {
-                top: 0,
-                width: headerWrapper.width/4,
-                right: 0,
-                height: headerWrapper.height
-            }
-        }
-    ).appendTo(headerWrapper);
-
-    var pageName = new MAF.element.Text(
+    new MAF.element.Text(
         {
             ClassName: 'PageName',
             label: title,
@@ -54,4 +41,17 @@ function createHeader(view, title) {
             }
         }
     ).appendTo(headerWrapper);
+
+    new MAF.element.Image(
+        {
+            src: 'Images/Antena-Logo.jpg',
+            styles: {
+                top: 0,
+                width: headerWrapper.width/4,
+                right: 0,
+                height: headerWrapper.height
+            }
+        }
+    ).appendTo(headerWrapper);
+
 }

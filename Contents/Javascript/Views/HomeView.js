@@ -122,8 +122,6 @@ var HomeView = new MAF.Class({
 			}
 		}).appendTo(antennaContainer);
 		/** Antena LOGO **/
-
-		createHeader(view, 'sef je car');
 	},
 
 	updateView: function () {
