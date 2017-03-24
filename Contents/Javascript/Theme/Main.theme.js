@@ -17,7 +17,7 @@ Theme.set({
                 boxShadow: "0px 0px 10px 3px" + SHADOWCOLOR
             }
         }
-    }
+    },
 
     ControlBackButtonIcon:{
         styles: {
