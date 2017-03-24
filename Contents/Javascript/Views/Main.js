@@ -19,17 +19,8 @@ var Main = new MAF.Class({
 			}
 		} ).appendTo( this );
 
-		var wall = this.elements.wall = new MAF.element.Text({
-
-			styles: {
-				width: view.width,
-				height: view.height
-			}
-
-		}).appendTo(view);
-
 		//create Header
-		createHeader(view, wall);
+		createHeader(view, 'sef je car');
 	},
 
 	// After create view and when returning to the view
