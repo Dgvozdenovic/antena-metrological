@@ -50,6 +50,10 @@ var LiveView = new MAF.Class({
 		}).appendTo(antennaContainer);
 		/** BACKGROUND IMAGE **/
 
+		/** HEADER **/
+		createHeader(view, "LIVE")
+		/** HEADER IMAGE **/
+
 		/** LIVE SLIDER **/
 		var slider = view.elements.slider = new MAF.element.SlideCarousel({
 			visibleCells: 6,
