@@ -60,7 +60,12 @@ var HomeView = new MAF.Class({
 				left: 20,
 				paddingLeft: 90,
 				paddingTop: 29
-			}
+			},
+			events: {
+                onSelect: function () {
+                    MAF.application.loadView('view-LiveView');
+                }
+            }
 		}).appendTo(this.elements.footerButton);
 
 		view.elements.emisiuniButton = new MAF.control.TextButton({
