@@ -12,11 +12,10 @@ var HomeView = new MAF.Class({
 		var antennaContainer = new MAF.element.Container({
 			styles: {
 				width: view.width,
-				height: view.height,
-				fontSize: 60,
+				height: view.height,				
 				backgroundColor: SPECIALCOLOR
 			}
-		}).appendTo(this);
+		}).appendTo(view);
 		/** MAIN CONTAINER **/
 
 		/** BACKGROUND IMAGE **/
@@ -25,8 +24,7 @@ var HomeView = new MAF.Class({
 			styles: {
 				top: 0,
 				width: view.width,
-				height: antennaContainer.height - 300,
-				fontSize: 60,
+				height: antennaContainer.height - 300,				
 				anchorStyle: 'center'
 			}
 		}).appendTo(antennaContainer);

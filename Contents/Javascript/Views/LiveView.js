@@ -46,7 +46,7 @@ var LiveView = new MAF.Class({
 				anchorStyle: 'center'
 			}
 		}).appendTo(liveContainer);
-		/** BACKGROUND IMAGE **/
+		/** BACKGROUND **/
 
 		/** HEADER **/
 		createHeader(view, "LIVE");
