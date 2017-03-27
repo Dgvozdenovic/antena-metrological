@@ -1,6 +1,7 @@
 
 //OZ API ENDPOINT
 var APIURL = "https://";
+var BACK = $_('Back');
 
 var FOCUSCOLOR = "#fff";
 var FOCUSBACKGROUNDCOLOR = '#000';

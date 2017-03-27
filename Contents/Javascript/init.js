@@ -11,6 +11,9 @@ include('Javascript/Views/LiveView.js');
 //Theme
 include("Javascript/Theme/Main.theme.js");
 
+//Components
+include('Javascript/Components/Header.js');
+
 // Init application with view config
 MAF.application.init({
 	views: [

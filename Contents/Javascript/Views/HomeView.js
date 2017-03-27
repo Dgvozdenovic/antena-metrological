@@ -112,6 +112,8 @@ var HomeView = new MAF.Class({
 		}).appendTo(view.elements.footerButton);
 
 		/** BUTTONS **/
+
+		/** Antena LOGO **/
 		new MAF.element.Text({
 			styles: {
 				top: antennaInitImage.height + view.elements.footerButton.height + 15,
@@ -124,6 +126,7 @@ var HomeView = new MAF.Class({
 				backgroundRepeat: 'no-repeat'
 			}
 		}).appendTo(antennaContainer);
+		/** Antena LOGO **/
 	},
 
 	updateView: function () {
