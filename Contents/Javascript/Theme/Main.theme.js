@@ -19,27 +19,24 @@ Theme.set({
         }
     },
 
-    ControlBackButtonIcon:{
+    ControlBackButtonIcon: {
         styles: {
             display: 'none'
+        }
     },
-    SpecialButton:{
+
+    SpecialButton: {
         normal: {
             styles: {
-                backgroundColor: 'purple',
-                borderRadius: 7,
-                border: "2px solid" + BORDERCOLOR
+                color: 'white',
             }
         },
 
         focused: {
             styles: {
-                backgroundColor: '',
-                borderRadius: 7,
-                border: "2px solid" + FOCUSCOLOR,
-                boxShadow: "0px 0px 10px 3px" + SHADOWCOLOR
+                color: 'black'
             }
         }
     }
-}
+
 });

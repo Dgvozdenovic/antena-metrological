@@ -1,15 +1,15 @@
 //Config
 include("Javascript/config.js");
 
+//Theme
+include("Javascript/Theme/Main.theme.js");
+
 //API
 include("Javascript/API/getLiveContent.js");
 
 // Include your views
 include('Javascript/Views/HomeView.js');
 include('Javascript/Views/LiveView.js');
-
-//Theme
-include("Javascript/Theme/Main.theme.js");
 
 //Components
 include('Javascript/Components/Header.js');
