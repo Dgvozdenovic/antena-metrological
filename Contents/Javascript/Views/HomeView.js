@@ -3,7 +3,7 @@ var HomeView = new MAF.Class({
 	ClassName: 'HomeView',
 
 	Extends: MAF.system.FullscreenView,
-
+    
 	createView: function () {
 
 		var view = this;
@@ -12,7 +12,8 @@ var HomeView = new MAF.Class({
 		var antennaContainer = new MAF.element.Container({
 			styles: {
 				width: view.width,
-				height: view.height,				
+				height: view.height,
+				fontSize: 60,
 				backgroundColor: SPECIALCOLOR
 			}
 		}).appendTo(view);
@@ -109,6 +110,27 @@ var HomeView = new MAF.Class({
 			}
 		}).appendTo(view.elements.footerButton);
 
+		/* HELP BUTTON FOR CONTENT SLIDER - WRAP WIDTH */
+		view.elements.helpButton = new MAF.control.TextButton({
+			label: $_('HELP'),
+			ClassName: 'Button',
+			theme: false,
+			styles: {
+				width: 270,
+				height: 70,
+				top: antennaInitImage.height + view.elements.footerButton.height + 15,
+				left: 1200,
+				fontSize: 15,
+				paddingLeft: 70,
+				paddingTop: 10
+			},
+			events: {
+                onSelect: function () {
+                    MAF.application.loadView('view-ContentSliderView');
+                }
+            }
+		}).appendTo(antennaContainer);
+
 		/** BUTTONS **/
 
 		/** Antena LOGO **/
@@ -125,6 +147,7 @@ var HomeView = new MAF.Class({
 			}
 		}).appendTo(antennaContainer);
 		/** Antena LOGO **/
+		
 	},
 
 	updateView: function () {
