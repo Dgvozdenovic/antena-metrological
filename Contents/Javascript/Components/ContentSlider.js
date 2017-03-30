@@ -1,7 +1,7 @@
- function createContentSlider(view, sliderWrap) {
+ function createContentSlider(view, sliderWrap, visibleCells) {
  var slider = view.elements.slider = new MAF.element.SlideCarousel({
         ClassName: 'contentSlider',
-        visibleCells: 4,
+        visibleCells: visibleCells,
         slideDuration: 0.2,
         subCells: 1,
         cellsSpacing: 10,
@@ -13,8 +13,6 @@
         styles: {
             width: sliderWrap.width,
             height: sliderWrap.height + 60,
-            //top: 10,  
-            //left:10,    
             fontSize:16,      
             backgroundColor: SPECIALCOLOR
             
@@ -38,7 +36,10 @@
                         this.animate({
 								duration: 0.2
 						});
-                    }                     
+                    },                    
+                    onSelect: function () {
+                         MAF.application.loadView('view-DetailsView');
+                    }                          
                 }
             });
 

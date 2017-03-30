@@ -55,7 +55,7 @@ var FavoriteView = new MAF.Class({
             }
         }).appendTo(view);
 
-		createContentSlider(view, sliderWrap);
+		createContentSlider(view, sliderWrap, 4);
 	},
 
 	updateView: function () {

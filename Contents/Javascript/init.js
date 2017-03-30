@@ -11,6 +11,7 @@ include("Javascript/API/getLiveContent.js");
 include('Javascript/Views/HomeView.js');
 include('Javascript/Views/LiveView.js');
 include('Javascript/Views/FavoriteView.js');
+include('Javascript/Views/DetailsView.js');
 include('Javascript/Views/ContentSliderView.js');
 
 //Components
@@ -23,6 +24,7 @@ MAF.application.init({
 		{ id: 'view-HomeView', viewClass: HomeView },
 		{ id: 'view-LiveView', viewClass: LiveView },
 		{ id: 'view-FavoriteView', viewClass: FavoriteView },
+		{ id: 'view-DetailsView', viewClass: DetailsView },
 		{ id: 'view-ContentSliderView', viewClass: ContentSliderView }
 	],
 	defaultViewId: 'view-HomeView'
