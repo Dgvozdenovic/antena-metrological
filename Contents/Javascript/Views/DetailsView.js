@@ -67,6 +67,7 @@ var DetailsView = new MAF.Class({
             }).appendTo(leftWrap);
 		 /** IMAGE LEFT WRAPPER **/	
 
+		 /** TITLE **/
 		var title = new MAF.element.Text({
 			    label: 'Chefi la Cutite',           
                 styles: {   
@@ -78,7 +79,9 @@ var DetailsView = new MAF.Class({
                     fontFamily: 'FuturaStd'
                 }
             }).appendTo(leftWrap);
+		/** TITLE **/
 
+		 /** SUBTITLE **/
         var subtitle = new MAF.element.Text({   
 				label: 'Cea mai recenta editie',             
                 styles: { 
@@ -89,7 +92,9 @@ var DetailsView = new MAF.Class({
                     fontSize: 40
                 }
             }).appendTo(leftWrap);
-                 
+        /** SUBTITLE **/
+
+		/** DATE **/
         var date = new MAF.element.Text({
 			    label: '12.03.2017',                
                 styles: {
@@ -100,7 +105,9 @@ var DetailsView = new MAF.Class({
                     fontSize: 40                    
                 }
             }).appendTo(leftWrap);
+		/** DATE **/	
 
+		/** PLAY BUTTON **/
 		view.elements.playButton = new MAF.control.TextButton({
 			label: $_('<i class="fa fa-play" aria-hidden="true"></i>' + ' ' + ' PLAY'),
 			ClassName: 'Button',
@@ -121,7 +128,8 @@ var DetailsView = new MAF.Class({
                     MAF.application.loadView('view-LiveView');
                 }
             }
-		}).appendTo(leftWrap);	
+		}).appendTo(leftWrap);
+		/** PLAY BUTTON **/
 
 		/** CONTENT SLIDER WRAP **/
         var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
