@@ -92,7 +92,12 @@ var HomeView = new MAF.Class({
 				left: view.elements.emisiuniButton.width + view.elements.liveButton.width + 60,
 				paddingLeft: 45,
 				paddingTop: 29
-			}
+			},
+			events: {
+                onSelect: function () {
+                    MAF.application.loadView('view-FavoriteView');
+                }
+            }
 		}).appendTo(view.elements.footerButton);
 
 
