@@ -1,6 +1,6 @@
 [
 	{
-		"img": "Images/Channel-content-1.jpg",
+		"img": "Images/Zaza-Sing.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
@@ -8,7 +8,7 @@
 		"date": "17.03.2017"
 	},
 	{
-		"img": "Images/Channel-Content-2.jpg",
+		"img": "Images/Prieteni.jpg",
 		"title": "Editia din 19.08.2017",
 		"day": "",
 		"provider": "",
@@ -16,7 +16,7 @@
 		"date": "11.02.2017"
 	},
 	{
-		"img": "Images/Channel-Content-3.jpg",
+		"img": "Images/Undeva.jpg",
 		"title": "Editia din 17.05.2017",
 		"day": "",
 		"provider": "",
@@ -24,7 +24,7 @@
 		"date": "9.02.2017"
 	},
 	{
-		"img": "Images/Channel-Content-4.jpg",
+		"img": "Images/Aparente.jpg",
 		"title": "Editia din 14.01.2017",
 		"day": "",
 		"provider": "",
@@ -32,7 +32,7 @@
 		"date": "6.02.2017"
 	},
 	{
-		"img": "Images/Antena3.jpg",
+		"img": "Images/ISerial.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
@@ -40,7 +40,7 @@
 		"date": "16.03.2017"
 	},
 	{
-		"img": "Images/AntenaMonden.jpg",
+		"img": "Images/Next-Star.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
@@ -48,7 +48,7 @@
 		"date": "10.03.2017"
 	},
 	{
-		"img": "Images/HappyChannel.jpg",
+		"img": "Images/Neatza.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
@@ -56,7 +56,7 @@
 		"date": "11.03.2017"
 	},
 	{
-		"img": "Images/ComedyPlay.jpg",
+		"img": "Images/Xtra.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
@@ -64,15 +64,15 @@
 		"date": "16.04.2017"
 	},
 	{
-		"img": "Images/ZuTv.jpg",
+		"img": "Images/Uniplay.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",
-		"subtitle": "ZU TV",
+		"subtitle": "Uniplay",
 		"date": "16.04.2017"
 	},
 	{
-		"img": "Images/Cook&Play.jpg",
+		"img": "Images/IUmor.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "7",
 		"provider": "",
@@ -80,7 +80,7 @@
 		"date": "7.04.2017"
 	},
 	{
-		"img": "Images/DisneyChannel.jpg",
+		"img": "Images/Observator.jpg",
 		"title": "Editia din 12.03.2017",
 		"day": "",
 		"provider": "",

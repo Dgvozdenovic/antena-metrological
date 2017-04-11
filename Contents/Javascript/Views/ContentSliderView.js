@@ -28,19 +28,19 @@ var ContentSliderView = new MAF.Class({
 		var view = this;
 
 		/** CONTENT SLIDER WRAP **/
-        var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
-			
-            styles: {
-                width: 1500,
-                height: 900,
-                hOffset: 200,
-				vOffset: 150,				
-				backgroundColor:'silver',
-				zIndex:500
-            }
-        }).appendTo(view);
+		var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
 
-		createContentSlider(view, sliderWrap);
+			styles: {
+				width: 1500,
+				height: 900,
+				hOffset: 200,
+				vOffset: 150,
+				backgroundColor: 'silver',
+				zIndex: 500
+			}
+		}).appendTo(view);
+
+		createContentSlider(view, sliderWrap, 4);
 	},
 
 	updateView: function () {

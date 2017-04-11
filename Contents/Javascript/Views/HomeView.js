@@ -3,10 +3,59 @@ var HomeView = new MAF.Class({
 	ClassName: 'HomeView',
 
 	Extends: MAF.system.FullscreenView,
-    
+
+	initialize: function () {
+		var view = this;
+		view.parent();
+		getInitialized();
+		view.registerMessageCenterListenerCallback(view.dataHasChanged);
+	},
+
+	dataHasChanged: function (event) {
+		var view = this,
+			elements = view.elements;
+
+		if (event.payload.key === 'Initialized') {
+			if (event.payload.value.length > 0) {
+				function wait(ms) {
+					var d = new Date();
+					var d2 = null;
+					do { d2 = new Date(); }
+					while (d2 - d < ms);
+				}
+				wait(2000);
+				elements.backGrounds.visible = false;
+			}
+		}
+	},
+
 	createView: function () {
 
 		var view = this;
+
+		/* LOADING SCREEN */
+		var backGrounds = this.elements.backGrounds = new MAF.element.Text({
+
+			styles: {
+				backgroundImage: 'Images/loading_screen.jpg',
+				backgroundRepeat: 'no-repeat',
+				width: this.width,
+				height: this.height,
+				anchorStyle: 'center',
+				visible: true,
+				zIndex: 2
+			}
+		}).appendTo(view);
+
+		this.elements.loading = new MAF.element.Image({
+			src: 'Images/loader.svg',
+			styles: {
+				top: 640,
+				width: 120,
+				left: "50%",
+				transform: "translate(-50%)"
+			}
+		}).appendTo(backGrounds);
 
 		/** MAIN CONTAINER **/
 		var antennaContainer = new MAF.element.Container({
@@ -25,12 +74,11 @@ var HomeView = new MAF.Class({
 			styles: {
 				top: 0,
 				width: view.width,
-				height: antennaContainer.height - 300,				
+				height: antennaContainer.height - 300,
 				anchorStyle: 'center'
 			}
 		}).appendTo(antennaContainer);
 		/** BACKGROUND IMAGE **/
-
 
 		/** FOOTER BUTTON **/
 		view.elements.footerButton = new MAF.element.Container({
@@ -61,10 +109,10 @@ var HomeView = new MAF.Class({
 				paddingTop: 29
 			},
 			events: {
-                onSelect: function () {
-                    MAF.application.loadView('view-LiveView');
-                }
-            }
+				onSelect: function () {
+					MAF.application.loadView('view-LiveView');
+				}
+			}
 		}).appendTo(this.elements.footerButton);
 
 		view.elements.emisiuniButton = new MAF.control.TextButton({
@@ -79,6 +127,11 @@ var HomeView = new MAF.Class({
 				paddingLeft: 50,
 				paddingTop: 29
 			},
+			events: {
+				onSelect: function () {
+					MAF.application.loadView('view-EmisiuniView');
+				}
+			}
 		}).appendTo(this.elements.footerButton);
 
 		view.elements.favoriteButton = new MAF.control.TextButton({
@@ -94,10 +147,10 @@ var HomeView = new MAF.Class({
 				paddingTop: 29
 			},
 			events: {
-                onSelect: function () {
-                    MAF.application.loadView('view-FavoriteView');
-                }
-            }
+				onSelect: function () {
+					MAF.application.loadView('view-FavoriteView');
+				}
+			}
 		}).appendTo(view.elements.footerButton);
 
 
@@ -112,29 +165,13 @@ var HomeView = new MAF.Class({
 				left: view.elements.emisiuniButton.width + view.elements.liveButton.width + view.elements.favoriteButton.width + 80,
 				paddingLeft: 80,
 				paddingTop: 29
-			}
-		}).appendTo(view.elements.footerButton);
-
-		/* HELP BUTTON FOR CONTENT SLIDER - WRAP WIDTH */
-		view.elements.helpButton = new MAF.control.TextButton({
-			label: $_('HELP'),
-			ClassName: 'Button',
-			theme: false,
-			styles: {
-				width: 270,
-				height: 70,
-				top: antennaInitImage.height + view.elements.footerButton.height + 15,
-				left: 1200,
-				fontSize: 15,
-				paddingLeft: 70,
-				paddingTop: 10
 			},
 			events: {
-                onSelect: function () {
-                    MAF.application.loadView('view-ContentSliderView');
-                }
-            }
-		}).appendTo(antennaContainer);
+				onSelect: function () {
+					MAF.application.loadView('view-LoginView');
+				}
+			}
+		}).appendTo(view.elements.footerButton);
 
 		/** BUTTONS **/
 
@@ -152,11 +189,12 @@ var HomeView = new MAF.Class({
 			}
 		}).appendTo(antennaContainer);
 		/** Antena LOGO **/
-		
+
 	},
 
 	updateView: function () {
 		var view = this;
+
 	}
 
 });

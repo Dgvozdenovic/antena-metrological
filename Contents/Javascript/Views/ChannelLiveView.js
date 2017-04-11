@@ -1,6 +1,6 @@
 
-var DetailsView = new MAF.Class({
-	ClassName: 'DetailsView',
+var ChannelLiveView = new MAF.Class({
+	ClassName: 'ChannelLiveView',
 
 	Extends: MAF.system.FullscreenView,
 	initialize: function () {
@@ -12,9 +12,9 @@ var DetailsView = new MAF.Class({
 
 	dataHasChanged: function (event) {
 		var view = this,
-			elements = view.elements;
+		elements = view.elements;
 
-		if (event.payload.key === 'DetailsData') {
+		if (event.payload.key === 'ProgramData') {
 			if (event.payload.value.length > 0) {
 				elements.slider.changeDataset(event.payload.value, true);				
 				elements.playButton.focus();
@@ -46,7 +46,7 @@ var DetailsView = new MAF.Class({
 		var leftWrap = this.elements.leftWrap = new MAF.element.Container({
 
 			styles: {
-				width: 800,
+				width: 900,
 				height: 850,
 				paddingLeft: 150,
 				hOffset: 100,
@@ -64,7 +64,7 @@ var DetailsView = new MAF.Class({
 				top: 30,
 				left: 50,
 				width: leftWrap.width,
-				height: leftWrap.height / 2
+				height: leftWrap.height / 2 + 50
 			}
 		}).appendTo(leftWrap);
 		/** IMAGE LEFT WRAPPER **/
@@ -83,44 +83,31 @@ var DetailsView = new MAF.Class({
 		}).appendTo(leftWrap);
 		/** TITLE **/
 
-		/** SUBTITLE **/
-		var subtitle = view.elements.subtitle = new MAF.element.Text({
-
+		/** LIVE TV **/
+		var liveTV = view.elements.liveTV = new MAF.element.Text({
+			label: $_('Live TV'),
 			styles: {
 				left: 50,
 				top: imageWrap.height + title.height + 40,
 				width: 500,
 				height: 60,
-				fontSize: 40
+				fontSize: 30
 			}
 		}).appendTo(leftWrap);
-		/** SUBTITLE **/
+		/** LIVE TV **/
 
-		/** DATE **/
-		var date = view.elements.date = new MAF.element.Text({
-
-			styles: {
-				left: 50,
-				top: imageWrap.height + title.height + subtitle.height + 40,
-				width: 500,
-				height: 60,
-				fontSize: 40
-			}
-		}).appendTo(leftWrap);
-		/** DATE **/
-
-		/** PLAY BUTTON **/
+		/** URMARESTE LIVE BUTTON **/
 		view.elements.playButton = new MAF.control.TextButton({
-			label: $_('<i class="fa fa-play" aria-hidden="true"></i>' + ' ' + ' PLAY'),
+			label: $_('<i class="fa fa-play" aria-hidden="true"></i>' + ' ' + ' URMARESTE LIVE'),
 			ClassName: 'Button',
 			theme: false,
 			styles: {
-				width: leftWrap.width - 200,
+				top: imageWrap.height + title.height + liveTV.height + 100,
+				left: 50,
+				width: imageWrap.width - 60,
 				height: 90,
 				paddingTop: 20,
-				paddingLeft: 250,
-				top: imageWrap.height + title.height + subtitle.height + date.height + 60,
-				left: 50
+				paddingLeft: 170
 			},
 			textStyles: {
 				fontSize: 40
@@ -136,14 +123,14 @@ var DetailsView = new MAF.Class({
 				}
 			}
 		}).appendTo(leftWrap);
-		/** PLAY BUTTON **/
+		/** URMARESTE LIVE BUTTON **/
 
 		/** CONTENT SLIDER WRAP **/
 		var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
 
 			styles: {
-				left: '50%',
-				width: 800,
+				left: '55%',
+				width: 700,
 				height: 800,
 				paddingLeft: 150,
 				vOffset: 150,
@@ -155,38 +142,33 @@ var DetailsView = new MAF.Class({
 		/** CONTENT SLIDER WRAP **/
 
 		/** SLIDER TITLE **/
-		var titleSlider = new MAF.element.Text({
+		var titleSlider = this.elements.titleSlider = new MAF.element.Text({
 			ClassName: 'titleSlider',
-			label: 'Editii anterioare',
 			styles: {
-				left: 100,
+				left: 45,
 				fontSize: 45,
 				fontFamily: 'FuturaStd'
 			}
 		}).appendTo(sliderWrap);
 		/** SLIDER TITLE **/
 
-		createContentSlider(view, sliderWrap, 3, 60, 'DetailsData');
+		createProgramContentSlider(view, sliderWrap, 4, 70);
 	},
 
 	updateView: function () {
 		var view = this;
 		item = view.persist.item;
 		view.elements.title.setText(item.title);
-		view.elements.subtitle.setText(item.subtitle);
-		view.elements.date.setText(item.date);
+		view.elements.titleSlider.setText('Program TV: ' + item.title);
 		view.elements.imageWrap.setSources({
-			src: item.img,
-			missingSrc: 'Images/no-thumb.jpg'
+			src: item.img
 		});
 
-		getDetailsData();
+		getProgramsData();
 
 	},
 	gotKeyPress: function (evt) {
-
 		var view = this.getView();
-
 		switch (evt.payload.key) {
 			case 'left':
 				if (view.directionPointer === 'play') this.elements.backButton.focus();

@@ -13,9 +13,9 @@ var LiveView = new MAF.Class({
 		var view = this,
 			elements = view.elements;
 
-		if (event.payload.key === 'AntenaData') {
+		if (event.payload.key === 'ChannelsData') {
 			if (event.payload.value.length > 0) {
-				elements.slider.changeDataset(event.payload.value, true);
+				elements.slider.changeDataset(event.payload.value, true);				
 				elements.slider.focus();
 			} else {
 				elements.slider.visible = false;
@@ -78,7 +78,7 @@ var LiveView = new MAF.Class({
 							MAF.messages.store('currentCell', this.getCellDataIndex(this));
 
 							this.imageCont.animate({
-								duration: 0.2,
+								//duration: 0.2,
 								width: slider.width / 7 + 13,
 								height: 347,
 								hOffset: 20,
@@ -92,7 +92,7 @@ var LiveView = new MAF.Class({
 
 						onBlur: function () {
 							this.imageCont.animate({
-								duration: 0.2,
+								//duration: 0.2,
 								width: slider.width / 7 + 10,
 								height: 344,
 								hOffset: 20,
@@ -101,6 +101,14 @@ var LiveView = new MAF.Class({
 								borderRadius: 4,
 								border: "2px solid" + SPECIALCOLOR,
 								boxShadow: "0px 0px 10px 3px" + SPECIALCOLOR
+							});
+						},
+						onSelect: function () {
+							var infoTake = MAF.messages.fetch('ChannelsData');
+							var info = infoTake[this.getCellDataIndex(this)];
+							log(info);
+							MAF.application.loadView('view-ChannelLiveView', {
+								item: info
 							});
 						}
 					}
@@ -139,7 +147,7 @@ var LiveView = new MAF.Class({
 				onDatasetChanged: function () {
 					this.animate({
 						opacity: 1,
-						duration: 0.2
+						//duration: 0.2
 					});
 				}
 			}
@@ -149,7 +157,7 @@ var LiveView = new MAF.Class({
 
 	updateView: function () {
 		var view = this;
-		getAntenaData();
+		getChannelsData();
 	}
 
 });

@@ -1,0 +1,91 @@
+[
+	{
+		"img": "Images/Antena1.jpg",
+		"title": "Antena 1",
+		"subtitle": "Subtitle1",
+		"day": "Editia din 12.03.2017",
+		"provider": "Antena 1",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/DisneyJunior.jpg",
+		"imgBig": "Images/DisneyJunior_big_image.jpg",
+		"title": "Disney Junior",
+		"subtitle": "Cea mai recenta editie",
+		"day": "Editia din 12.03.2017",
+		"provider": "Disney Junior",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/AntenaStars.jpg",
+		"title": "Antena Stars",
+		"subtitle": "Subtitle3",
+		"day": "Editia din 12.03.2017",
+		"provider": "Antena Stars",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/AntenaInternational.jpg",
+		"title": "Antena International",
+		"subtitle": "Subtitle4",
+		"day": "Editia din 12.03.2017",
+		"provider": "Antena International",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/Antena3.jpg",
+		"title": "Antena 3",
+		"subtitle": "Subtitle5",
+		"day": "Editia din 12.03.2017",
+		"provider": "Antena 3",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/AntenaMonden.jpg",
+		"title": "Antena Monden",
+		"subtitle": "Subtitle6",
+		"day": "Editia din 12.03.2017",
+		"provider": "Antena Monden",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/HappyChannel.jpg",
+		"title": "Happy Channel",
+		"subtitle": "Subtitle7",
+		"day": "Editia din 12.03.2017",
+		"provider": "Happy Channel",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/ComedyPlay.jpg",
+		"title": "Comedy Play",
+		"subtitle": "Subtitle8",
+		"day": "Editia din 12.03.2017",
+		"provider": "Comedy Play",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/ZuTv.jpg",
+		"title": "Zu Tv",
+		"subtitle": "Subtitle",
+		"day": "Editia din 12.03.2017",
+		"provider": "ZU TV",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/Cook&Play.jpg",
+		"title": "Cook & Play",
+		"subtitle": "Subtitle",
+		"day": "Editia din 12.03.2017",
+		"provider": "Cook & Play",
+		"date": "12.03.2017"
+	},
+	{
+		"img": "Images/DisneyChannel.jpg",
+		"title": "Disney Channel",
+		"subtitle": "Subtitle",
+		"day": "Editia din 12.03.2017",
+		"provider": "Disney Channel",
+		"date": "12.03.2017"
+	}
+]

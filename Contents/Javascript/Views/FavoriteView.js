@@ -11,9 +11,9 @@ var FavoriteView = new MAF.Class({
 
 	dataHasChanged: function (event) {
 		var view = this,
-			elements = view.elements;
-
-		if (event.payload.key === 'AntenaData') {
+		elements = view.elements;
+		
+		if (event.payload.key === 'FavoriteData') {
 			if (event.payload.value.length > 0) {
 				elements.slider.changeDataset(event.payload.value, true);
 				elements.slider.focus();
@@ -24,9 +24,8 @@ var FavoriteView = new MAF.Class({
 	},
 
 	createView: function () {
-
+		getFavoriteData();
 		var view = this;
-
 
 		/** MAIN CONTAINER **/
 		var liveContainer = new MAF.element.Container({
@@ -43,24 +42,27 @@ var FavoriteView = new MAF.Class({
 		/** HEADER **/
 
 		/** CONTENT SLIDER WRAP **/
-        var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
-			
-            styles: {
-                width: 1680,
-                height: 900,
-                hOffset: 150,
-				vOffset: 150,				
-				backgroundColor:'SPECIALCOLOR',
-				zIndex:2
-            }
-        }).appendTo(view);
+		var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
 
-		createContentSlider(view, sliderWrap, 4);
+			styles: {
+				width: 1680,
+				height: 800,
+				hOffset: 150,
+				vOffset: 150,
+				backgroundColor: 'SPECIALCOLOR',
+				zIndex: 2
+			}
+		}).appendTo(view);
+
+		createContentSlider(view, sliderWrap, 4, false, 'FavoriteData');
 	},
 
 	updateView: function () {
 		var view = this;
-		getAntenaData();
-	}
+		view.elements.slider.focus();
+	},
+	gotKeyPress: function (evt) {
+		var view = this;
+	},
 
 });
