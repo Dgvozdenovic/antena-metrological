@@ -105,10 +105,7 @@ var EmisiuniView = new MAF.Class({
     },
 
     updateView: function () {
-        var view = this;       
-        channel = view.persist.item; log(channel);
-        if(channel=='Antena Stars') getAntenaStarsData();
-        else if(channel=='Antena Monden') getAntenaMonden();
+        var view = this;
     },
     gotKeyPress: function (evt) {
         var view = this.getView();
