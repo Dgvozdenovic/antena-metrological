@@ -132,7 +132,7 @@ var DetailsView = new MAF.Class({
 					view.directionPointer = 'play';
 				},
 				onSelect: function () {
-					MAF.application.loadView('view-LiveView');
+					MAF.application.loadView('view-VideoView');
 				}
 			}
 		}).appendTo(leftWrap);

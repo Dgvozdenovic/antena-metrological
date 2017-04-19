@@ -35,9 +35,21 @@ function createContentSlider(view, sliderWrap, visibleCells, top, dataStore) {
                     onSelect: function () {
                         var infoTake = MAF.messages.fetch(dataStore);
                         var info = infoTake[this.getCellDataIndex(this)];
-                        MAF.application.loadView('view-DetailsView', {
-                            item: info
-                        });
+                        if(dataStore==='FavoriteData' || dataStore==='EmisiuniData') {
+                            MAF.application.loadView('view-DetailsView', {
+                                item: info
+                            });
+                        }
+                        else if(dataStore==='DetailsData') {
+                            getDetailsData();
+                            view.elements.title.setText(info.title);
+                            view.elements.subtitle.setText(info.subtitle);
+                            view.elements.date.setText(info.date);
+                            view.elements.imageWrap.setSources({
+                                src: info.img,
+                                missingSrc: 'Images/no-thumb.jpg'
+                            });
+                        }
                     }
                 }
             });
