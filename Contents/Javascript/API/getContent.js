@@ -22,6 +22,18 @@ var getFavoriteData = function () {
 	}).send();
 };
 
+var getEmisiuniData = function () {
+	MAF.utility.WaitIndicator.up();
+	file = 'details.json';
+	new Request({
+		url: 'Javascript/Utility/' + file,
+		onSuccess: function (data) {
+			MAF.messages.store('EmisiuniData', data || []);
+			MAF.utility.WaitIndicator.down();
+		}
+	}).send();
+};
+
 var getDetailsData = function () {
 	MAF.utility.WaitIndicator.up();
 	file = 'details.json';

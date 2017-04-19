@@ -34,6 +34,9 @@ function createChannelSlider(view, sliderWrap, visibleCells, top, dataStore) {
                     },
                     onSelect: function () {
                         var takeChannel = this.getCellDataItem(this).title;
+                        /*MAF.application.loadView('view-EmisiuniView', {
+                            item: takeChannel
+                        });*/
                         if(takeChannel=='Antena Stars') getAntenaStarsData();
                         else if(takeChannel=='Antena Monden') getAntenaMonden();
                     }

@@ -53,6 +53,7 @@ var EmisiuniView = new MAF.Class({
         var view = this;
         getChannelsData();
         getChannelData();
+        getEmisiuniData();
         this.keyPressEvent = this.gotKeyPress.subscribeTo(MAF.application, 'onWidgetKeyPress', this);
         /** MAIN CONTAINER **/
         var liveContainer = new MAF.element.Container({
@@ -101,11 +102,14 @@ var EmisiuniView = new MAF.Class({
         }).appendTo(view);
         /** CONTENT SLIDER WRAP **/
 
-        createContentSlider(view, sliderWrap, 4);
+        createContentSlider(view, sliderWrap, 4, false, 'EmisiuniData');
     },
 
     updateView: function () {
         var view = this;
+        //channel = view.persist.item; log(channel);
+        //if(channel=='Antena Stars') getAntenaStarsData();
+        //else if(channel=='Antena Monden') getAntenaMonden();
     },
     gotKeyPress: function (evt) {
         var view = this.getView();
