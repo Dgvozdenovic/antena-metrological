@@ -29,7 +29,6 @@ function createProgramContentSlider(view, sliderWrap, visibleCells, top) {
                 events: {
                     onFocus: function () {
                         view.directionPointer = 'slider';
-
                     }
                 }
             });

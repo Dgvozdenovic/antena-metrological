@@ -22,6 +22,7 @@ include('Javascript/Views/LoginView.js');
 include('Javascript/Components/Header.js');
 include('Javascript/Components/ContentSlider.js');
 include('Javascript/Components/ProgramContentSlider.js');
+include('Javascript/Components/ChannelSlider.js');
 
 // Init application with view config
 MAF.application.init({

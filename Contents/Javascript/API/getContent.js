@@ -70,6 +70,18 @@ var getAntenaStarsData = function () {
 	}).send();
 };
 
+var getAntenaMonden = function () {
+	MAF.utility.WaitIndicator.up();
+	file = 'antenamonden.json';
+	new Request({
+		url: 'Javascript/Utility/' + file,
+		onSuccess: function (data) {
+			MAF.messages.store('Antena Monden', data || []);
+			MAF.utility.WaitIndicator.down();
+		}
+	}).send();
+};
+
 var getProgramsData = function () {
 	MAF.utility.WaitIndicator.up();
 	file = 'program.json';

@@ -38,6 +38,14 @@ var EmisiuniView = new MAF.Class({
                 elements.slider.visible = false;
             }
         }
+        if (event.payload.key === 'Antena Monden') {
+            if (event.payload.value.length > 0) {
+                elements.slider.changeDataset(event.payload.value, true);
+                elements.slider.focus();
+            } else {
+                elements.slider.visible = false;
+            }
+        }
     },
 
     createView: function () {
@@ -75,78 +83,7 @@ var EmisiuniView = new MAF.Class({
         }).appendTo(view);
         /** LEFT WRAPPER **/
 
-        /** LEFT SLIDER */
-        var sliderLeft = view.elements.sliderLeft = new MAF.element.SlideCarousel({
-            ClassName: 'contentSlider',
-            visibleCells: 9,
-            slideDuration: 0.2,
-            subCells: 1,
-            orientation: 'vertical',
-            carousel: false,
-            dynamicFocus: true,
-            dynamicFocusEnd: 2,
-            dynamicFocusStart: 0,
-            styles: {
-                top: 0,
-                width: leftWrap.width - 60,
-                height: leftWrap.height + 20,
-                fontSize: 16,
-                backgroundColor: SPECIALCOLOR
-            },
-
-            cellCreator: function () {
-
-                var cell = new MAF.element.SlideCarouselCell({
-
-                    styles: this.getCellDimensions(),
-
-                    ClassName: 'cellLeft',
-                    theme: false,
-
-                    events: {
-                        onFocus: function () {
-                            var view = this.getView();
-                            view.directionPointer = 'sliderLeft';
-                        },
-                        onSelect: function () {
-                            var takeChannel = this.getCellDataItem(this).title;
-                            MAF.application.loadView('view-EmisiuniView', {
-                                item: takeChannel
-                        });
-                        }
-                    }
-                });
-
-                cell.title = new MAF.element.Text({
-                    ClassName: 'titleSlider',
-                    styles: {
-                        left: 20,
-                        top: 0,
-                        width: cell.width - 20,
-                        height: cell.height - 30,
-                        paddingLeft: 10,
-                        paddingTop: 5,
-                        fontSize: 60,
-                        fontFamily: 'FuturaStd'
-                    }
-                }).appendTo(cell);
-
-                return cell;
-            },
-
-            cellUpdater: function (cell, data) {
-                cell.title.setText(data.title);
-            },
-
-            events: {
-                onDatasetChanged: function () {
-                    this.animate({
-                        opacity: 1
-                    });
-                }
-            }
-        }).appendTo(leftWrap);
-        /** LEFT SLIDER */
+        createChannelSlider(view, leftWrap, 9, 0);
 
         /** CONTENT SLIDER WRAP **/
         var sliderWrap = this.elements.sliderWrap = new MAF.element.Container({
@@ -170,7 +107,8 @@ var EmisiuniView = new MAF.Class({
     updateView: function () {
         var view = this;       
         channel = view.persist.item; log(channel);
-        if(channel) getAntenaStarsData();            
+        if(channel=='Antena Stars') getAntenaStarsData();
+        else if(channel=='Antena Monden') getAntenaMonden();
     },
     gotKeyPress: function (evt) {
         var view = this.getView();
