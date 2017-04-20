@@ -13,7 +13,7 @@ function createChannelSlider(view, sliderWrap, visibleCells, top, dataStore) {
         styles: {
             top: top,
             width: sliderWrap.width - 60,
-            height: sliderWrap.height + 20,
+            height: sliderWrap.height + 40,
             fontSize: 16,
             backgroundColor: SPECIALCOLOR
         },
@@ -46,10 +46,10 @@ function createChannelSlider(view, sliderWrap, visibleCells, top, dataStore) {
             cell.title = new MAF.element.Text({
                 ClassName: 'titleSlider',
                 styles: {
-                    left: 20,
-                    top: 0,
+                    left: 15,
+                    top: 5,
                     width: cell.width - 20,
-                    height: cell.height - 30,
+                    height: cell.height - 50,
                     paddingLeft: 10,
                     paddingTop: 5,
                     fontSize: 60,
