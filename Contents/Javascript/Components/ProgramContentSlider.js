@@ -54,11 +54,12 @@ function createProgramContentSlider(view, sliderWrap, visibleCells, top) {
                 }
             }).appendTo(cell.descriptionBox);
 
+
             cell.acum = new MAF.element.Text({
                 label: 'ACUM',
                 styles: {
                     top: 4 * (sliderWrap.height / 4 - 50) / 10 + 10,
-                    left: cell.descriptionBox.width / 4 + 40,
+                    left: 20,//cell.descriptionBox.width / 4 + 40,
                     width: cell.descriptionBox.width / 4 - 30,
                     height: 3 * (sliderWrap.height / 4 - 50) / 10 + 5,
                     fontSize: 3 * (sliderWrap.height / 4 - 50) / 10,
@@ -71,7 +72,6 @@ function createProgramContentSlider(view, sliderWrap, visibleCells, top) {
                 }
             }).appendTo(cell.descriptionBox);
 
-
             cell.time = new MAF.element.Text({
                 styles: {
                     top: 4 * (sliderWrap.height / 4 - 50) / 10,
@@ -82,6 +82,10 @@ function createProgramContentSlider(view, sliderWrap, visibleCells, top) {
                     color: '#5F5F5F'
                 }
             }).appendTo(cell.descriptionBox);
+
+
+
+
 
             return cell;
         },
@@ -98,9 +102,12 @@ function createProgramContentSlider(view, sliderWrap, visibleCells, top) {
                     log(h); log(m); log(startTime[0]);
                     cell.acum.visible = false;
                 }
-                else cell.acum.visible = true;
+                else {
+                    cell.acum.visible = true;
+                    cell.time.setStyle('left', 180);
+                }
             }
-            else cell.acum.visible = false;
+            else {cell.acum.visible = false; cell.time.setStyle('left', 20);}
             cell.title.setText(data.title);
             cell.time.setText(data.time);
         },
